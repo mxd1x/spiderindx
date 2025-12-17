@@ -1,0 +1,440 @@
+/* ===============================
+   ROOT SYSTEM
+================================ */
+:root {
+  --black: #000000;
+  --black-soft: #05070a;
+  --panel: ;
+  --border: rgba(255,255,255,0.08);
+  --cyan: #00f5ff;
+  --cyan-soft: rgba(0,245,255,0.25);
+  --text: #ffffff;
+  --muted: rgba(255,255,255,0.65);
+
+  /* spacing (8px system) */
+  --s1: 8px;
+  --s2: 16px;
+  --s3: 24px;
+  --s4: 32px;
+  --s5: 48px;
+  --s6: 64px;
+  --s7: 96px;
+
+  --radius: 18px;
+}
+
+/* ===============================
+   RESET
+================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  background: var(--black);
+  color: var(--text);
+  font-family: 'Inter', system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+/* ===============================
+   LOADER
+================================ */
+#loader {
+  position: fixed;
+  inset: 0;
+  background: var(--black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.loader-core {
+  font-size: 2rem;
+  letter-spacing: 6px;
+  color: var(--cyan);
+  text-shadow: 0 0 40px var(--cyan-soft);
+  animation: pulse 1.8s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0%,100% { opacity: .4 }
+  50% { opacity: 1 }
+}
+
+/* ===============================
+   BACKGROUND EFFECTS
+================================ */
+.cyber-grid {
+  position: fixed;
+  inset: 0;
+  z-index: -5;
+  background:
+    linear-gradient(to right, rgba(4, 5, 5, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0,245,255,0.06) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(circle at center, black 40%, transparent 75%);
+  opacity: 0.35;
+}
+
+.scanlines {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -3;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.03),
+    rgba(255,255,255,0.03) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  opacity: 0.08;
+}
+
+.noise {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+}
+
+/* ===============================
+   CURSOR GLOW
+================================ */
+.cursor-glow {
+  position: fixed;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--cyan-soft), transparent 65%);
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  mix-blend-mode: screen;
+}
+
+/* ===============================
+   NAVIGATION
+================================ */
+.nav-wrap {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 50;
+  backdrop-filter: blur(12px);
+}
+
+.nav-box {
+  max-width: 1200px;
+  margin: auto;
+  padding: var(--s2);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border);
+}
+
+.logo {
+  font-weight: 900;
+  letter-spacing: 4px;
+  color: var(--cyan);
+}
+
+.nav-links {
+  position: relative;
+  display: flex;
+  gap: var(--s4);
+}
+
+.nav-link {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+  position: relative;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--text);
+}
+
+.nav-underline {
+  position: absolute;
+  bottom: -8px;
+  height: 2px;
+  background: var(--cyan);
+  width: 0;
+  left: 0;
+  transition: all .35s cubic-bezier(.4,0,.2,1);
+}
+
+.nav-cta {
+  padding: 10px 22px;
+  background: transparent;
+  border: 1px solid var(--cyan);
+  border-radius: 999px;
+  color: var(--cyan);
+  cursor: pointer;
+}
+
+/* ===============================
+   SECTIONS & BOXES
+================================ */
+.section {
+  padding: var(--s7) var(--s3);
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  background: rgba(255,255,255,0.06); backdrop-filter: blur(14px);
+    border: 1px solid var(--border);
+}
+
+.boxed {
+  position: relative;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,0.06),
+      rgba(255,255,255,0.015)
+    );
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 28px;
+  padding: var(--s6);
+  box-shadow:
+    0 30px 80px rgba(0,0,0,0.6),
+    inset 0 0 0 1px rgba(255,255,255,0.03);
+}
+
+/* subtle cyan edge on hover */
+.boxed::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  box-shadow: inset 0 0 0 1px rgba(0,245,255,0.25);
+  opacity: 0;
+  transition: opacity .4s ease;
+}
+
+.boxed:hover::after {
+  opacity: 1;
+}
+
+
+/* ===============================
+   HERO
+================================ */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.hero h1 {
+  font-size: clamp(3rem, 6vw, 4.5rem);
+  font-weight: 900;
+}
+
+.hero h1 span {
+  color: var(--cyan);
+  text-shadow: 0 0 40px var(--cyan-soft);
+}
+
+.sub {
+  margin-top: var(--s3);
+  max-width: 600px;
+  color: var(--muted);
+}
+
+.hero-actions {
+  margin-top: var(--s4);
+  display: flex;
+  gap: var(--s3);
+}
+
+/* ===============================
+   BUTTONS
+================================ */
+.btn {
+  padding: 16px 36px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.btn.primary {
+  background: var(--cyan);
+  color: #000;
+  box-shadow: 0 0 40px var(--cyan-soft);
+}
+
+.btn.ghost {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+
+/* ===============================
+   GRIDS
+================================ */
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+  gap: var(--s5);
+}
+
+.card-grid,
+.price-grid,
+.maint-grid {
+  display: grid;
+  gap: var(--s4);
+  grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+}
+
+.card,
+.price-box,
+.maint-box,
+.step {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--s4);
+  text-align: center;
+}
+
+/* ===============================
+   TILT TARGET
+================================ */
+.tilt {
+  will-change: transform;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.tilt:hover {
+  box-shadow: 0 0 60px var(--cyan-soft);
+}
+
+/* ===============================
+   FORMS
+================================ */
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  background: #05070a;
+  border: 1px solid var(--border);
+  padding: var(--s2);
+  border-radius: 999px;
+  color: var(--text);
+  margin-bottom: var(--s3);
+}
+
+.contact-form textarea {
+  border-radius: var(--radius);
+  min-height: 120px;
+}
+
+/* ===============================
+   REVEAL (JS TRIGGERS)
+================================ */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+/* ===============================
+   FOOTER
+================================ */
+.footer {
+  padding: var(--s5);
+  text-align: center;
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+}
+
+
+/* ===============================
+   MOBILE OPTIMIZATION
+================================ */
+@media (max-width: 768px) {
+
+  /* 🔹 Reduce spacing system */
+  :root {
+    --s1: 6px;
+    --s2: 12px;
+    --s3: 18px;
+    --s4: 24px;
+    --s5: 32px;
+    --s6: 48px;
+    --s7: 72px;
+  }
+
+  /* 🔹 Sections: less vertical space */
+  .section {
+    padding: var(--s7) var(--s2);
+  }
+
+  /* 🔹 Boxes: tighter but clean */
+  .boxed {
+    padding: var(--s4);
+  }
+
+  /* 🔹 Hero: avoid huge empty space */
+  .hero {
+    min-height: auto;
+    padding-top: var(--s7);
+    padding-bottom: var(--s7);
+  }
+
+  /* 🔹 Typography scaling */
+  .hero h1 {
+    font-size: clamp(2.2rem, 8vw, 3rem);
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  .sub {
+    max-width: 100%;
+    font-size: 0.95rem;
+  }
+
+  /* 🔹 Grids collapse cleanly */
+  .grid-2,
+  .card-grid,
+  .price-grid,
+  .maint-grid {
+    grid-template-columns: 1fr;
+    gap: var(--s4);
+  }
+
+  /* 🔹 Cards & steps */
+  .card,
+  .price-box,
+  .maint-box,
+  .step {
+    padding: var(--s3);
+    font-size: 0.95rem;
+  }
+
+  /* 🔹 Nav: hide links (future mobile menu ready) */
+  .nav-links {
+    display: none;
+  }
+
+  /* 🔹 Buttons: slightly smaller */
+  .btn {
+    padding: 14px 28px;
+  }
+
+}

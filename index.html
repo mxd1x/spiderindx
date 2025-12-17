@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SPIDER — Web Like a Spider</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- LOADER -->
+<div id="loader"><div class="loader-core" style="font-family: sans-serif;">SPIDER</div></div>
+
+<!-- BACKGROUND -->
+<div class="bg-orb"></div>
+<div class="cyber-grid"></div>
+<canvas id="particles"></canvas>
+<div class="scanlines"></div>
+<div class="noise"></div>
+
+<!-- CURSOR -->
+<div class="cursor-glow"></div>
+
+<!-- NAV -->
+<header class="nav-wrap">
+  <div class="nav-box">
+    <div class="logo">SPIDER</div>
+    <nav class="nav-links">
+      <a href="#hero" class="nav-link active">Home</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#services" class="nav-link">Services</a>
+      <a href="#pricing" class="nav-link">Pricing</a>
+      <a href="#contact" class="nav-link">Contact</a>
+      <span class="nav-underline"></span>
+    </nav>
+    <a href="#pricing " class="nav-cta" style="text-decoration: none;">Start</a>
+  </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section id="hero" class="section hero">
+  <div class="container boxed">
+    <h1 class="reveal">We Create Web Like a <span>Spider</span></h1>
+    <p class="sub reveal">Clean. Strong. Unique. Built with patience & precision.</p>
+    <p class="sub reveal">We create websites that are resilient, fast, and built to last.</p>
+    <div class="hero-actions reveal">
+      <a href="#pricing " class="btn primary" style="text-decoration: none;">Get Started</a>
+    </div>
+  </div>
+</section>
+<!-- stats -->
+<section class="stats-section">
+  <div class="stats-inner">
+
+    <div class="stat reveal">
+      <span class="stat-number" data-target="50">0</span>
+      <p>Projects Completed</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="stat reveal">
+      <span class="stat-number" data-target="100">0</span>
+      <p>Client Satisfaction</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="stat reveal">
+      <span class="stat-number" data-target="24">0</span>
+      <p>Support Available</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="stat reveal">
+      <span class="stat-number" data-target="10">0</span>
+      <p>Starting Price (₹K)</p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ABOUT -->
+<section id="about" class="section">
+  <div class="container boxed grid-2">
+    <div class="box reveal">
+      <h2 class="reveal" style="font-size: 50px;">About <span style="color: aqua; font-size: 50px;">Spider</span></h2><br>
+
+      <p>We believe in resilience. If the web breaks, we rebuild stronger.</p>
+      <p>Affordable, modern websites for growing businesses.
+        Spider is a web development brand built on patience, precision, and purpose just like how a spider builds its web. We believe great websites aren’t rushed; they are crafted carefully, layer by layer. Our mission is to help small and growing businesses build a strong digital presence with clean design, solid technology, and honest pricing. At Spider, we don’t just build websites  we build foundations for growth.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="section">
+  <div class="container boxed">
+
+    <h1 class="reveal" style="font-size: 50px;">What We <span style="color: aqua;">Do</span></h1>
+
+    <div class="card-grid">
+
+      <!-- UI / UX -->
+      <div class="card tilt reveal">
+        <div class="icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="3" width="20" height="14" rx="2"></rect>
+            <line x1="8" y1="21" x2="16" y2="21"></line>
+            <line x1="12" y1="17" x2="12" y2="21"></line>
+          </svg>
+        </div>
+        <h3 class="reveal">Website <span style="color: aqua;">Design</span></h3>
+        <p>Modern, minimal, brand-focused pages that feel premium.</p>
+      </div>
+
+      <!-- Web Dev -->
+      <div class="card tilt reveal">
+        <div class="icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2">
+            <polyline points="16 18 22 12 16 6"></polyline>
+            <polyline points="8 6 2 12 8 18"></polyline>
+          </svg>
+        </div>
+        <h3 class="reveal">Website <span style="color: aqua;">Development</span></h3>
+        <p>Fast, responsive websites built using modern tech stacks.</p>
+      </div>
+
+      <!-- E-commerce -->
+      <div class="card tilt reveal">
+        <div class="icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2">
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.6 13h10.4l2-8H6"></path>
+          </svg>
+        </div>
+        <h3 class="reveal">E-commerce <span style="color: aqua;">Website</span></h3>
+        <p>Full online store with admin panel & product management.</p>
+      </div>
+
+      <!-- Starter Kit -->
+      <div class="card tilt reveal">
+        <div class="icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2">
+            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+          </svg>
+        </div>
+        <h3 class="reveal">Spider <span style="color: aqua;">Starter Kit</span></h3>
+        <p>Logo, branding, Google Business & WhatsApp setup.</p>
+      </div>
+
+      <!-- Local Business -->
+      <div class="card tilt reveal">
+        <div class="icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2">
+            <path d="M3 21h18"></path>
+            <path d="M5 21V7l8-4 8 4v14"></path>
+            <path d="M9 21v-6h6v6"></path>
+          </svg>
+        </div>
+        <h3 class="reveal">Local Business <span style="color: aqua;">websites</span></h3>
+        <p>Perfect for shops, gyms, salons & local services.</p>
+      </div>
+      <div class="card tilt reveal">
+        <div class="icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-scan-heart-icon lucide-scan-heart">
+          <path d="M17 3h2a2 2 0 0 1 2 2v2"/>
+          <path d="M21 17v2a2 2 0 0 1-2 2h-2"/>
+          <path d="M3 7V5a2 2 0 0 1 2-2h2"/>
+          <path d="M7 21H5a2 2 0 0 1-2-2v-2"/>
+          <path d="M7.828 13.07A3 3 0 0 1 12 8.764a3 3 0 0 1 4.172 4.306l-3.447 3.62a1 1 0 0 1-1.449 0z"/></svg>
+          </svg>
+        </div>
+        <h3 class="reveal">Website <span style="color: aqua;">Maintenance</span></h3>
+        <p>Regular updates, security checks, backups, and performance optimization to keep your site healthy and reliable.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- WHY SPIDER -->
+<section id="why-choose" class="section why-section">
+  <div class="why-container">
+
+    <div class="why-heading reveal">
+      <h2>Why Choose <span class="cyan" style="color: aqua;">Spider</span></h2>
+    </div>
+
+    <div class="why-content">
+
+      <!-- LEFT -->
+      <div class="why-list reveal">
+
+        <div class="why-item">
+          <span class="why-icon">
+            <!-- Design -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M12 20l9-5-9-5-9 5 9 5z"/>
+              <path d="M12 12l9-5-9-5-9 5 9 5z"/>
+            </svg>
+          </span>
+          <p>Clean, modern designs</p>
+        </div>
+
+        <div class="why-item">
+          <span class="why-icon">
+            <!-- Speed -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/>
+            </svg>
+          </span>
+          <p>Fast loading performance</p>
+        </div>
+
+        <div class="why-item">
+          <span class="why-icon">
+            <!-- Pricing -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <circle cx="12" cy="12" r="9"/>
+              <path d="M8 12h8"/>
+            </svg>
+          </span>
+          <p>Affordable pricing</p>
+        </div>
+
+      </div>
+
+      <!-- RIGHT -->
+      <div class="why-list reveal">
+
+        <div class="why-item">
+          <span class="why-icon">
+            <!-- Team -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <circle cx="12" cy="8" r="4"/>
+              <path d="M4 20c2-4 14-4 16 0"/>
+            </svg>
+          </span>
+          <p>Young, creative team</p>
+        </div>
+
+        <div class="why-item">
+          <span class="why-icon">
+            <!-- Process -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <circle cx="12" cy="12" r="9"/>
+              <path d="M12 7v5l3 3"/>
+            </svg>
+          </span>
+          <p>Simple, transparent process</p>
+        </div>
+
+        <div class="why-item">
+          <span class="why-icon">
+            <!-- Partnership -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M16 11V7a4 4 0 00-8 0v4"/>
+              <rect x="4" y="11" width="16" height="9" rx="2"/>
+            </svg>
+          </span>
+          <p>Long-term partnership mindset</p>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- PRICING -->
+<section id="pricing" class="section">
+  <div class="container boxed">
+    <h2 class="center reveal">Choose Your <span class="cyan">Package</span></h2>
+
+    <div class="pricing-grid">
+      <div class="price-card reveal" style="padding-bottom: 40px;>
+        <h3>Basic</h3>
+        <p class="price">₹10,000</p>
+        <ul>
+          <li>1–3 pages</li><li>Responsive</li><li>SEO</li>
+        </ul>
+        <a href="#contact" class="price-btn" style="text-decoration: none; padding-left: 40px; padding-right: 40px; ">Get Started</a>
+      </div>
+
+      <div class="price-card highlight reveal" style="padding-bottom: 40px;">
+        <span class="badge">Most Popular</span>
+        <h3>Business</h3>
+        <p class="price">₹20k–30k</p>
+        <ul>
+          <li>Custom layout</li><li>Animations</li><li>Analytics</li>
+        </ul>
+        <a href="#contact" class="price-btn" style="text-decoration: none; padding-left: 40px; padding-right: 40px; ">Get Started</a>
+      </div>
+
+      <div class="price-card reveal" style="padding-bottom: 40px;>
+        <h3>E-commerce</h3>
+        <p class="price">₹35k+</p>
+        <ul>
+          <li>Store</li><li>Admin</li><li>Payments</li>
+        </ul>
+        <a href="#contact" class="price-btn" style="text-decoration: none; padding-left: 40px; padding-right: 40px; ">Get Started</a>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="maintenance" class="section">
+  <div class="container boxed">
+    <h2 class="center reveal">
+      Maintenance <span class="cyan">Plans</span>
+    </h2>
+
+    <div class="maint-pricing-grid">
+
+      <!-- BASIC -->
+      <div class="maint-card reveal">
+        <h3>Basic Care</h3>
+        <p class="maint-price">₹499 <span>/mo</span></p>
+
+        <ul>
+          <li>Monthly inspections</li>
+          <li>Filter replacements</li>
+          <li>Priority support</li>
+        </ul>
+
+        <button class="maint-btn">Choose Plan</button>
+      </div>
+
+      <!-- STANDARD -->
+      <div class="maint-card highlight reveal">
+        <h3>Standard Care</h3>
+        <p class="maint-price">₹999 <span>/mo</span></p>
+
+        <ul>
+          <li>Bi-weekly inspections</li>
+          <li>Full diagnostics</li>
+          <li>24/7 support</li>
+        </ul>
+
+        <button class="maint-btn">Choose Plan</button>
+      </div>
+
+      <!-- PREMIUM -->
+      <div class="maint-card reveal">
+        <h3>Premium Care</h3>
+        <p class="maint-price">₹1599 <span>/mo</span></p>
+
+        <ul>
+          <li>Weekly inspections</li>
+          <li>On-site technician</li>
+          <li>Dedicated manager</li>
+        </ul>
+
+        <button class="maint-btn">Choose Plan</button>
+      </div>
+
+    </div>
+  </div>
+</section>
+<section id="contact" class="section contact-section">
+  <div class="container boxed">
+
+    <div class="contact-grid">
+      <!-- LEFT INFO -->
+      <div class="contact-info reveal">
+        <h2>Let’s Build Your <span class="cyan" style="color: aqua;">Web</span></h2>
+
+        <p class="contact-sub">
+          Have an idea? A business? Or just a question?  
+          Drop a message — we reply fast.
+        </p>
+
+        <ul class="contact-meta">
+          <li>➤ Trivandrum, Kerala</li>
+          <li>✉ hello@spider.<span style="color: aqua;">web</span></li>
+          <li>🗲 Fast response</li>
+        </ul>
+      </div>
+
+      <!-- FORM -->
+      <form class="contact-card reveal">
+        <div class="field">
+          <input required />
+          <label style="color: rgb(39, 39, 39);">Name</label>
+        </div>
+
+        <div class="field">
+          <input type="email" required />
+          <label style="color: rgb(39, 39, 39);">Email</label>
+        </div>
+
+        <div class="field textarea">
+          <textarea required></textarea>
+          <label style="color: rgb(39, 39, 39);">Message</label>
+        </div>
+
+        <button class="btn primary send-btn">
+          <span>Send Message</span>
+        </button>
+      </form>
+    </div>
+
+  </div>
+</section>
+<footer class="site-footer">
+  <div class="footer-inner">
+
+    <div class="footer-left">
+      © 2025 <strong>SPIDER</strong> Inc. All rights reserved.
+    </div>
+
+    <div class="footer-right">
+      <a href="#" class="social-btn" aria-label="LinkedIn">in</a>
+      <a href="#" class="social-btn" aria-label="Instagram">◎</a>
+    </div>
+
+  </div>
+</footer>
+
+
+<script src="script.js"></script>
+</body>
+</html>
